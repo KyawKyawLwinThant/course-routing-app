@@ -1,1 +1,50 @@
-<p>course-list works!</p>
+
+
+
+
+<div class="card">
+  <div class="card-header bg-primary text-light">
+    <h3>{{pageTitle}}</h3>
+
+  </div>
+
+  <div class="row mt-3 form-group">
+    <div class="col-md-2 col-form-label ml-4">Filter by:</div>
+    <div class="col-md-4">
+      <input type="text" class="form-control" [formControl]="category">
+    </div>
+  </div>
+  <div class="row" *ngIf="listFilter">
+    <div class="col-md-6">
+      <h3 class="ml-4">Filter by: {{listFilter}}</h3>
+    </div>
+  </div>
+
+  <div class="card-body" *ngIf="(courses|async) as mycourses">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let course of mycourses">
+            <td><a [routerLink]="[course.id]" [queryParams]="{filterBy:listFilter}">{{course.url}} </a></td>
+            <td>{{course.description}}</td>
+            <td>{{course.category}}</td>
+            <td>{{course.price}}</td>
+            <td><a class="btn btn-primary">Edit</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+</div>

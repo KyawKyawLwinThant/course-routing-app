@@ -7,7 +7,7 @@ import {CourseEditComponent} from './course-edit/course-edit.component';
 
 const routes:Routes=[
   {path:'',component:CourseListComponent},
-  {path:'detail',component: CourseDetailComponent},
+  {path:':id',component: CourseDetailComponent},
   {path:'edit',component: CourseEditComponent}
 ]
 
