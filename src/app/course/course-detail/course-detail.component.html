@@ -2,9 +2,35 @@
 
 
 
-<ng-container *ngIf="(course|async)as mycourse">
+<ng-container *ngIf="mycourse">
 
+ <div class="card">
+   <div class="card-header bg-primary text-light">
+     <h3>{{'Product Details :' + mycourse.url}}</h3>
 
+   </div>
+
+   <div class="card-body row">
+     <div class="col-md-5">
+       <img [src]="mycourse.iconUrl" alt="" class="card-img">
+
+     </div>
+
+     <div class="col-md-7">
+       <h3 class="card-title">{{mycourse.url}}</h3>
+       <p class="card-text">{{mycourse.category}}</p>
+       <p class="card-text">{{mycourse.longDescription}}</p>
+       <p class="card-text">{{mycourse.price | currency}}</p>
+
+     </div>
+
+   </div>
+   <div class="card-footer bg-light">
+     <a class="btn btn-light bg-white mr-3" [routerLink]="['/courses']"><i class="fas fa-angle-left mr2"></i> Back</a>
+     <a class="btn btn-primary text-light" (click)="gotToEdit()">Edit</a>
+   </div>
+
+ </div>
 
 
 

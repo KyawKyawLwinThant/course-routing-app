@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {CourseService} from '../service/course.service';
 import {Observable} from 'rxjs';
 import {Course} from '../model/course.model';
@@ -12,22 +12,33 @@ import {map} from 'rxjs/operators';
 })
 export class CourseDetailComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute,private courseService:CourseService) { }
+  constructor(private activatedRoute:ActivatedRoute,private courseService:CourseService
+  ,private route:Router) { }
 
   id:number;
-  course:Observable<Course>
+  mycourse:Course;
+ // course:Observable<Course>
 
-  ngOnInit(): void {
+ /* ngOnInit(): void {
 
-    this.route.paramMap.subscribe(
+    this.activatedRoute.paramMap.subscribe(
       param =>{
         this.id=+param.get('id');
       }
     );
-    this.course=this.courseService.courses
-      .pipe(
-        map(courses => courses.find(course => course.id === this.id))
-      )
+    this.course=this.courseService.getCourse(this.id);
+  }
+
+  */
+ ngOnInit(): void {
+   this.activatedRoute.data.subscribe(
+     data => this.mycourse = data['course']
+   );
+ }
+
+
+  public gotToEdit(){
+    this.route.navigate(['edit'],{relativeTo:this.activatedRoute});
   }
 
 }

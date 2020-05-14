@@ -32,4 +32,9 @@ export class CourseService {
       map(courses => courses.filter(course => course.category == category))
     )
   }
+  getCourse(id:number):Observable<Course>{
+    return this.courses.pipe(
+      map(courses => courses.find(course => course.id === id))
+    );
+  }
 }

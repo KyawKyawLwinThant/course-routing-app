@@ -8,6 +8,7 @@ import {CourseRoutingModule} from './course-routing-module';
 import {CourseService} from './service/course.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {CourseResolverService} from './service/course.resolver.service';
 
 
 
@@ -22,6 +23,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   ],
   providers:[
     CourseService,
+    CourseResolverService
   ]
 })
 export class CourseModule { }
