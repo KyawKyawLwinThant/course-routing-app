@@ -1,0 +1,22 @@
+
+
+
+
+
+.arr-right .breadcrumb-item+.breadcrumb-item::before{
+  content: ">";
+  vertical-align: top;
+  color:#408080;
+  font-size: 25px;
+  line-height: 18px;
+}
+
+
+a.active{
+  color:white;
+  padding: 10px;
+  font-weight: bold;
+  background: royalblue;
+  border: 1px solid red;
+  border-radius: 5px;
+}

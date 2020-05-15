@@ -1,0 +1,58 @@
+
+
+
+
+<div class="card">
+
+  <div class="card-header text-light bg-primary">
+
+    <h3>{{'Edit Course :'+ course.url}}</h3>
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">{{pageTitle}}</h4>
+    <hr>
+
+    <form [formGroup]="courseEditForm" autocomplete="off" novalidate>
+
+      <div class="form-group row">
+        <label class="col-form-label col-md-2 mt-3">Course Title</label>
+        <div class="col-md-8 mt-3">
+          <input type="text" class="form-control" formControlName="url">
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label class="col-form-label col-md-2 mt-3">Course Category</label>
+        <div class="col-md-8 mt-3">
+          <input type="text" class="form-control" formControlName="category">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-form-label col-md-2 mt-3">Price</label>
+        <div class="col-md-8 mt-3">
+          <input type="number" class="form-control" formControlName="price">
+        </div>
+      </div>
+
+
+
+    </form>
+
+
+
+  </div>
+  <div class="card-footer bg-light">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <a  class="btn btn-primary text-light mr-3">Save</a>
+        <a class="btn btn-light mr-3">Cancel</a>
+        <a class="btn btn-light">Delete</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>

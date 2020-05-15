@@ -9,11 +9,13 @@ import {CourseService} from './service/course.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CourseResolverService} from './service/course.resolver.service';
+import { CourseEditPrimaryComponent } from './course-edit-primary/course-edit-primary.component';
+import { CourseEditCompleteComponent } from './course-edit-complete/course-edit-complete.component';
 
 
 
 @NgModule({
-  declarations: [CourseListComponent, CourseDetailComponent, CourseEditComponent],
+  declarations: [CourseListComponent, CourseDetailComponent, CourseEditComponent, CourseEditPrimaryComponent, CourseEditCompleteComponent],
   imports: [
     CommonModule,
     CourseRoutingModule,
